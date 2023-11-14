@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System.Collections.Generic;
+using System.Xml.Linq;
 /*
 {
     // Это сообщение будет выведено на экран
@@ -86,15 +87,16 @@ Console.WriteLine($"Имя: {name} Возраст {age} Рост:{height}");Cons
 Console.WriteLine($"Имя: {0} Возраст {2} Рост:{1}, name , height, age"); Console.WriteLine("J = " + j);
 */
 
-
+/*
 Console.WriteLine("Введите свое имя:");
 string? name = Console.ReadLine();
 Console.WriteLine($"Ваше имя: {name}");
 
 Console.WriteLine("Введите свой возраст:");
-string? age str = Console.ReadLine();
+string? age_str = Console.ReadLine();
 int age = Convert.ToInt32(age_str);
 Console.WriteLine($"Ваш возраст: {age}");
+*/
 
 
 /* 
@@ -111,3 +113,61 @@ float milkFatPercentage = 1.2F;
 
 
 
+// Задание №1
+/* 
+double pi = 3.141592653;
+decimal e = 2.718281828459045M;
+Console.WriteLine($"Число Архимеда pi={pi} \nЧисло Эйлера е={e}");
+Console.WriteLine("Нажми Enter");
+Console.ReadLine();
+*/
+
+/* 
+// Задание №2
+string name0;
+string name1;
+string name2;
+
+name0 = "\nмоя строка 1"; // \n - Новая строка (перевод строки)
+Console.WriteLine(name0);
+
+name1 = "\tмоя строка 2"; // \t - Горизонтальная табуляция
+Console.WriteLine(name1);
+
+name2 = "\aмоя строка 3"; // \a - ???
+Console.WriteLine(name2);
+Console.WriteLine("Нажми Enter");
+Console.ReadLine();
+*/
+
+/* 
+// Задание №3
+const double PI = 3.141592653;
+
+Console.WriteLine($"Число PI={PI} \nВведите значение r" );
+double r = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine(PI * Math.Pow(r, 2));
+Console.WriteLine("Ты молодец!");
+Console.ReadLine();
+*/
+
+
+/* 
+// Задание №4
+const double PI = 3.141592653;
+
+Console.WriteLine("Введите значение r");
+double r = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("\nВведите значение h");
+double h = Convert.ToDouble(Console.ReadLine());
+
+Console.WriteLine($"Число PI={PI} \nЧисло r={r} \nЧисло h={h}");
+
+Console.WriteLine("V = PIR2h");
+Console.WriteLine(PI * Math.Pow(r, 2) * h);
+Console.WriteLine("S = 2PIR(R + h)");
+Console.WriteLine(2 * PI * r * (r + h));
+
+Console.WriteLine("Ты молодец!");
+Console.ReadLine();
+*/ 
