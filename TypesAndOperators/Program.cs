@@ -1,6 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Xml.Linq;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 /*
 {
     // Это сообщение будет выведено на экран
@@ -113,61 +116,70 @@ float milkFatPercentage = 1.2F;
 
 
 
-// Задание №1
-/* 
-double pi = 3.141592653;
-decimal e = 2.718281828459045M;
-Console.WriteLine($"Число Архимеда pi={pi} \nЧисло Эйлера е={e}");
-Console.WriteLine("Нажми Enter");
-Console.ReadLine();
+
+
+
+// Урок 7
+/*
+if (условие)
+
+{
+
+}    
 */
 
-/* 
-// Задание №2
-string name0;
-string name1;
-string name2;
+/*
+bool isWhiteBreadFresh = true;
+ushort whiteBreadPrice = 150;
+ushort butterPrice = 230;
+ushort milkPrice = 170;
+float milkFatPercentage = 1.2F;
+ushort icecreamPrice=350;
 
-name0 = "\nмоя строка 1"; // \n - Новая строка (перевод строки)
-Console.WriteLine(name0);
+Console.WriteLine("Введите начальную сумму: ");
+string? sumString = Console.ReadLine();
+short sum = Convert.ToInt16(sumString);
 
-name1 = "\tмоя строка 2"; // \t - Горизонтальная табуляция
-Console.WriteLine(name1);
+if (sum > 0)
+{
+    Console.WriteLine("Сумма не может быть меньше 0");
+}
+else
+{
+    Console.WriteLine("Сумма не может быть меньше 0");
+}
+}
 
-name2 = "\aмоя строка 3"; // \a - ???
-Console.WriteLine(name2);
-Console.WriteLine("Нажми Enter");
-Console.ReadLine();
+    
+
+if (isWhiteBreadFresh)
+{
+    // sum = (short)( sum - whiteBreadPrice);
+    sum = Convert.ToInt16(sum - whiteBreadPrice);
+}
+sum = (short)(sum - butterPrice);
+
+if (milkFatPercentage ==1.2F)
+{
+    sum = Convert.ToInt16(sum - milkPrice);
+}
+
+ if (sum >= icecreamPrice)
+{
+    sum = Convert.ToInt16(sum - icecreamPrice);
+}
+Console.WriteLine($"Остаток суммы: {sum}");
+}
+
+
+  else
+{
+    Console.WriteLine("Сумма не может быть меньше 0");
+}
+}
+
 */
 
-/* 
-// Задание №3
-const double PI = 3.141592653;
-
-Console.WriteLine($"Число PI={PI} \nВведите значение r" );
-double r = Convert.ToDouble(Console.ReadLine());
-Console.WriteLine(PI * Math.Pow(r, 2));
-Console.WriteLine("Ты молодец!");
-Console.ReadLine();
-*/
 
 
-/* 
-// Задание №4
-const double PI = 3.141592653;
 
-Console.WriteLine("Введите значение r");
-double r = Convert.ToDouble(Console.ReadLine());
-Console.WriteLine("\nВведите значение h");
-double h = Convert.ToDouble(Console.ReadLine());
-
-Console.WriteLine($"Число PI={PI} \nЧисло r={r} \nЧисло h={h}");
-
-Console.WriteLine("V = PIR2h");
-Console.WriteLine(PI * Math.Pow(r, 2) * h);
-Console.WriteLine("S = 2PIR(R + h)");
-Console.WriteLine(2 * PI * r * (r + h));
-
-Console.WriteLine("Ты молодец!");
-Console.ReadLine();
-*/ 
