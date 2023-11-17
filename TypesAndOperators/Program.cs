@@ -1,185 +1,354 @@
-﻿// See https://aka.ms/new-console-template for more information
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.Design;
-using System.Xml.Linq;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-/*
+﻿// Задание 1
+/* 
+namespace TypesAndOperators
 {
-    // Это сообщение будет выведено на экран
-    /* Многострочный 
-     * вид
-     * клмментария
-      */
-/*
-    Console.WriteLine("Hello, World!");
-    {     
-        Console.WriteLine("It's a nice day!");
+    static class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Console.WriteLine("Введите первое число ");
+            double a = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Введите операцию +, -, *,/");
+            string b = Console.ReadLine();
+
+            Console.WriteLine("Введите второе число ");
+            double c = Convert.ToDouble(Console.ReadLine());
+
+            switch (b)
+            {
+                case "+":
+                    Console.WriteLine(a + c);
+                    break;
+                case "-":
+                    Console.WriteLine(a - c);
+                    break;
+                case "/":
+                    if (c != 0)
+                        Console.WriteLine(a / c);
+                    else
+                        Console.WriteLine("Нельзя делить на 0!");
+                    break;
+                case "*":
+                    Console.WriteLine(a * c);
+                    break;
+            }
+            Console.ReadKey();
+        }
     }
-    const int MINUTES_IN_HOUR = 60;
-
-    string name;
-
-    name = "Bob";
-    Console.WriteLine(name);
-    
-    name = "Bob1";
-    Console.WriteLine(name);
-
-    name = "Bob2";
-    Console.WriteLine(name);
-
-    Console.WriteLine(true); // логические литералы
-    Console.WriteLine(false);// логические литералы
-
-
-    Console.WriteLine(-10); // целочисленные литералы
-    Console.WriteLine(0);// целочисленные литералы
-    Console.WriteLine(10);// целочисленные литералы
-    Console.WriteLine(0b10011);// целочисленные литералы
-
-
-    Console.WriteLine(1.24); // дробное
-    Console.WriteLine(1.24F);// число с дробной точкой вещественый
-
-    // Console.WriteLine(null); 
-    
-    Console.WriteLine("It's a \t nice day!");// \t - табуляция
-    Console.WriteLine("It's a \n nice day!");// \n - перенос на новую строку
-    Console.WriteLine("It's a \\ nice day!");// \\ указание слеша в тексте
-
-    bool flag = true;
-    flag = false;
-
-    sbyte sb = 100;
-
-    float a = 3.14F;
-    float a1 = 3.14F;
-
-    decimal c = 1005.5M;
-    decimal c1 = 1005.5M;
-
-    var d = 10;
-    var d1 = 10.2F;
-
-    int j;
-    j = 20;
-
-    var j1 = 20; // верное указание 
 }
-    */
+*/
+
+//Задание 2
+/* 
+namespace TypesAndOperators
+{
+    static class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Console.WriteLine("Введите целое число ");
+            int a = Convert.ToInt32(Console.ReadLine());
+
+
+            if (a >= -50 && a <= 50)
+            {
+                if (a >= -40 && a <= -10)
+                {
+                    Console.WriteLine("[-40 - -10]");
+                }
+                else
+                {
+                    if (a >= -9 && a <= 0)
+                    {
+                        Console.WriteLine("[-9 - 0]");
+                    }
+                    else
+                    {
+                        if (a >= 1 && a <= 10)
+                        {
+                            Console.WriteLine("[1 - 10]");
+                        }
+                        else
+                        {
+                            if (a >= 11 && a <= 40)
+                            {
+                                Console.WriteLine("[11 - 40]");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Введено число, не входящее ни в один из имеющихся числовых промежутков!");
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("Введено число, не входящее в промежуток (от -50 до 50) !");
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
+*/
+
+//Задание 3
+/* 
+namespace TypesAndOperators
+{
+    static class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Console.WriteLine("Введите одно из слов, на русском языке: холодно,тепло,прохладно,солнечно,безоблачно,облачно,дождливо,гроза,молния");
+            string a = Console.ReadLine();
+
+            switch (a)
+            {
+                case "холодно":
+                    Console.WriteLine("cold");
+                    break;
+                case "тепло":
+                    Console.WriteLine("warm");
+                    break;
+                case "прохладно":
+                    Console.WriteLine("chilly");
+                    break;
+                case "солнечно":
+                    Console.WriteLine("sunny");
+                    break;
+                case "безоблачно":
+                    Console.WriteLine("cloudless");
+                    break;
+                case "облачно":
+                    Console.WriteLine("cloudy");
+                    break;
+                case "дождливо":
+                    Console.WriteLine("rainy");
+                    break;
+                case "гроза":
+                    Console.WriteLine("thunderstorm");
+                    break;
+                case "молния":
+                    Console.WriteLine("lightning");
+                    break;
+
+                default:
+                    Console.WriteLine("Введено несуществующее слово!");
+                    break;
+            }
+            Console.ReadKey();
+        }
+    }
+}
+*/
+
+
+//Задание 4
+// Вариант 1 через IF 
+/* 
+namespace TypesAndOperators
+{
+    static class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Console.WriteLine("Введите целое число ");
+            double a = Convert.ToDouble(Console.ReadLine());
+            double b = a % 2;
+            bool c = b == 0;
+
+            if (c)
+            {
+                Console.WriteLine("Перед Вами четное число!");
+            }
+            else
+            {
+                Console.WriteLine("Перед Вами НЕ четное число!");
+            }
+        
+        Console.ReadKey();
+        }
+    }
+}
+*/
+
+//Вариант 1.1 через IF 
+/* 
+namespace TypesAndOperators
+{
+    static class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Console.WriteLine("Введите целое число ");
+            double a = Convert.ToDouble(Console.ReadLine());
+
+            if (a % 2 == 0)
+            {
+                Console.WriteLine("Перед Вами четное число!");
+            }
+            else
+            {
+                Console.WriteLine("Перед Вами НЕ четное число!");
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
+*/
+
+
+// Вариант 2 через switch
+/* 
+namespace TypesAndOperators
+{
+    static class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Console.WriteLine("Введите целое число ");
+            double a = Convert.ToDouble(Console.ReadLine());
+            double b = a % 2;
+            bool c = b == 0;
+
+            switch (c)
+            {
+                case true:
+                    Console.WriteLine("Перед Вами четное число!");
+                    break;
+
+                default:
+                    Console.WriteLine("Перед Вами НЕ четное число!");
+                    break;
+            }
+            Console.ReadKey();
+        }
+    }
+}
+*/
+
+
+//Вариант 2.1 через switch
+/* 
+namespace TypesAndOperators
+{
+    static class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Console.WriteLine("Введите целое число ");
+            double a = Convert.ToDouble(Console.ReadLine());
+
+            switch (a % 2) 
+            {
+                case 0:
+                    Console.WriteLine("Перед Вами четное число!");
+                    break;
+
+                default:
+                    Console.WriteLine("Перед Вами НЕ четное число!");
+                    break;
+            }
+            Console.ReadKey();
+        }
+    }
+}
+*/
+
+
+
+// Вариант 3 через тернарный оператор
+/* 
+namespace TypesAndOperators
+{
+    static class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите целое число ");
+            double a = Convert.ToDouble(Console.ReadLine());
+
+            string b = 0 == a % 2 ? "Перед Вами четное число!" : "Перед Вами НЕ четное число!";
+
+            Console.WriteLine(b) ;
+        
+            Console.ReadKey();
+        }
+}
+}
+*/
+
+
+//Доп. задания
+
+// Задание №1
+/* 
+double pi = 3.141592653;
+decimal e = 2.718281828459045M;
+Console.WriteLine($"Число Архимеда pi={pi} \nЧисло Эйлера е={e}");
+Console.WriteLine("Нажми Enter");
+Console.ReadLine();
+*/
 
 /* 
-Console.WriteLine("Добро пожаловать в С#");
-Console.Write("Надеюсь Вы ");
-Console.Write("постигните нюансы в С#! ");
-Console.WriteLine("И все будет супер гуд!!!");
-*\
+// Задание №2
+string name0;
+string name1;
+string name2;
 
-/*
-int j;
-j = 20;
+name0 = "\nмоя строка 1"; // \n - Новая строка (перевод строки)
+Console.WriteLine(name0);
 
-Console.WriteLine("J = " + j);// конкатинация!!
+name1 = "\tмоя строка 2"; // \t - Горизонтальная табуляция
+Console.WriteLine(name1);
 
-string name = "Tom";
-int age = 34;
-double height = 1.7;
-
-Console.WriteLine($"Имя: {name} Возраст {age} Рост:{height}");Console.WriteLine("J = " + j);
-Console.WriteLine($"Имя: {0} Возраст {2} Рост:{1}, name , height, age"); Console.WriteLine("J = " + j);
+name2 = "\aмоя строка 3"; // \a - ???
+Console.WriteLine(name2);
+Console.WriteLine("Нажми Enter");
+Console.ReadLine();
 */
 
-/*
-Console.WriteLine("Введите свое имя:");
-string? name = Console.ReadLine();
-Console.WriteLine($"Ваше имя: {name}");
+/* 
+// Задание №3
+const double PI = 3.141592653;
 
-Console.WriteLine("Введите свой возраст:");
-string? age_str = Console.ReadLine();
-int age = Convert.ToInt32(age_str);
-Console.WriteLine($"Ваш возраст: {age}");
+Console.WriteLine($"Число PI={PI} \nВведите значение r" );
+double r = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine(PI * Math.Pow(r, 2));
+Console.WriteLine("Ты молодец!");
+Console.ReadLine();
 */
 
 
 /* 
-//Решение нашей задачи
-// Подготовка данных
+// Задание №4
+const double PI = 3.141592653;
 
-bool isWhiteBreadFresh = true;
-ushort whiteBreadPrice = 100;
-ushort butterPrice = 230;
-ushort milkPrice = 170;
-float milkFatPercentage = 1.2F;
-}
+Console.WriteLine("Введите значение r");
+double r = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("\nВведите значение h");
+double h = Convert.ToDouble(Console.ReadLine());
+
+Console.WriteLine($"Число PI={PI} \nЧисло r={r} \nЧисло h={h}");
+
+Console.WriteLine("V = PIR2h");
+Console.WriteLine(PI * Math.Pow(r, 2) * h);
+Console.WriteLine("S = 2PIR(R + h)");
+Console.WriteLine(2 * PI * r * (r + h));
+
+Console.WriteLine("Ты молодец!");
+Console.ReadLine();
 */
-
-
-
-
-
-
-// Урок 7
-/*
-if (условие)
-
-{
-
-}    
-*/
-
-/*
-bool isWhiteBreadFresh = true;
-ushort whiteBreadPrice = 150;
-ushort butterPrice = 230;
-ushort milkPrice = 170;
-float milkFatPercentage = 1.2F;
-ushort icecreamPrice=350;
-
-Console.WriteLine("Введите начальную сумму: ");
-string? sumString = Console.ReadLine();
-short sum = Convert.ToInt16(sumString);
-
-if (sum > 0)
-{
-    Console.WriteLine("Сумма не может быть меньше 0");
-}
-else
-{
-    Console.WriteLine("Сумма не может быть меньше 0");
-}
-}
-
-    
-
-if (isWhiteBreadFresh)
-{
-    // sum = (short)( sum - whiteBreadPrice);
-    sum = Convert.ToInt16(sum - whiteBreadPrice);
-}
-sum = (short)(sum - butterPrice);
-
-if (milkFatPercentage ==1.2F)
-{
-    sum = Convert.ToInt16(sum - milkPrice);
-}
-
- if (sum >= icecreamPrice)
-{
-    sum = Convert.ToInt16(sum - icecreamPrice);
-}
-Console.WriteLine($"Остаток суммы: {sum}");
-}
-
-
-  else
-{
-    Console.WriteLine("Сумма не может быть меньше 0");
-}
-}
-
-*/
-
-
 
 
