@@ -281,7 +281,7 @@ namespace TypesAndOperators
 
             string b = 0 == a % 2 ? "Перед Вами четное число!" : "Перед Вами НЕ четное число!";
 
-            Console.WriteLine(b) ;
+            Console.WriteLine(b);
         
             Console.ReadKey();
         }
