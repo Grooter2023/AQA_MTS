@@ -1,46 +1,171 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-int[] array = { 1, 9, 3, 0, 5 };
-
-int[] array1;
-int n = 4;
-array1 = new int[n];
-Console.WriteLine(array1);
-
-
-//int[] aray2 = new int[5] { 1, 9, 3, 6, 5 };
-
-
-
-
-//Console.WriteLine(array[1]);                       // какой именно элемент из массива вывести
-//array[0] = 11;                                     // изменяем первый элемент в массиве с индексом 0 на значение 11  
-/*
-Console.WriteLine($"Последний элемент массива: {array[array.Length - 2]}") ;          // получение пред последнего элемента массива 
-Console.WriteLine($"Последний элемент массива: {array[array.GetUpperBound(0)]}");    // получение последнего элемента массива без "array.Length - ". Используем ^1
-Console.WriteLine($"Последний элемент массива: {array[^1]}");                       // получение последнего элемента массива 
-
-Console.WriteLine(array[0]);                       // отбразится в начале исходное, затем то на которое изменяли
-Console.WriteLine("Length: " + array.Length);                       // количество всех элементов
-Console.WriteLine("Rank: " + array.Rank);                           // ранк массива
-Console.WriteLine("GetLength(0): " + array.GetLength(0));           // количество элементов
-Console.WriteLine("GetUpperBound(0): " + array.GetUpperBound(0));   // Верхний индекс строк
-Console.WriteLine("GetUpperBound(0): " + array.GetLowerBound(0));   // Нижний индекс строк
-*/
-
-/*
-for (int i = 0; i < array.GetLength(0); i++ )
+﻿// Задание 1
+/* 
+namespace TypesAndOperators
 {
-    Console.WriteLine($"{array[i]} ") ;
-}
-Console.WriteLine() ;
-*/
+    static class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] arr = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 } ;
+            string text = "Ваше число НЕ входит в массив!";
 
-/*
-for (int i = 0; i <= array.GetUpperBound(0); i++)
-{
-    Console.WriteLine($"{array[i]} ");
+             Console.WriteLine("Введите число ");
+             double b = Convert.ToDouble(Console.ReadLine()); // 2
+            
+            for (int i = 0; i < arr.GetLength(0); i++) 
+            {
+                if (arr[i] == b)
+                {
+                    text = "Ваше число входит в массив!";
+                    break;
+                }            
+            }
+            Console.WriteLine(text);
+            Console.ReadKey();
+        }
+    }
 }
 */
 
+// Задание 2
+/* 
+namespace TypesAndOperators
+{
+    static class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] arr = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            bool fl = false;
 
+            Console.WriteLine("Введите число ");
+            double b = Convert.ToDouble(Console.ReadLine()); 
+
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                if (arr[i] == b)
+                {
+                    arr[i] = 0;
+                    fl = true;
+                }
+            }
+            if (fl)
+            {
+                foreach (int c in arr)
+                {
+                    Console.WriteLine(c);
+                }
+            }
+            else
+            {
+                Console.WriteLine("Ваше число НЕ нашлось!");
+            }
+            Console.ReadKey();
+        }
+    }
+}
+*/
+
+
+// Задание 3
+/* 
+namespace TypesAndOperators
+{
+    static class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите размер массива ");
+            int a = Convert.ToInt32(Console.ReadLine());
+
+            int[] array = new int[a];
+            Random rnd = new Random();
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = rnd.Next(0,5);
+            }
+            string one = string.Join(" ",array);
+            Console.WriteLine(one);  
+
+            int min = 0;
+            int max = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] < min)
+                {     
+                    min = array[i];
+                }
+                if (array[i] > max)
+                {
+                    max = array[i];
+                }
+            }
+            double summ = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                 summ = summ + array[i];   
+            }
+            double aver = summ / array.Length;
+            Console.WriteLine($"Максимальное значение = {max}");
+            Console.WriteLine($"Минимальное значение = {min}");
+            Console.WriteLine($"Среднее значение = {aver}");
+            Console.ReadKey();
+        }
+    }
+}
+*/
+
+// Задание 4
+/* 
+namespace TypesAndOperators
+{
+    static class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] arr1 = { 0, 0, 0, 0, 5 };
+            int[] arr2 = { 0, 0, 0, 50, 5 };
+
+            string one = string.Join(" ", arr1);
+            Console.WriteLine(one);
+
+            string two = string.Join(" ", arr2);
+            Console.WriteLine(two);
+
+            double summ1 = 0;
+            for (int i = 0; i < arr1.Length; i++)
+            {
+                summ1 = summ1 + arr1[i];
+            }
+            double aver1 = summ1 / arr1.Length;
+
+            double summ2 = 0;
+            for (int i = 0; i < arr2.Length; i++)
+            {
+                summ2 = summ2 + arr2[i];
+            }
+            double aver2 = summ2 / arr2.Length;
+
+            Console.WriteLine($"Среднее значение = {aver1}");
+            Console.WriteLine($"Среднее значение = {aver2}");
+
+            if (aver1 == aver2)
+            {
+                Console.WriteLine(" Среднии первого и второго массива равны! ");
+            }
+            else
+            {
+                if (aver1 > aver2)
+                {
+                    Console.WriteLine(" Средняя первого массива больше! ");
+                }
+                else
+                {
+                    Console.WriteLine("Средняя второго массива больше!");
+                }
+            }
+        } 
+    }
+}
+*/
