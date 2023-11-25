@@ -1,10 +1,13 @@
-﻿
-namespace StringApp
-{
-    static class Program
+﻿using System.Text;
+using static System.Net.Mime.MediaTypeNames;
+
+
+namespace StringApp // Note: actual namespace depends on the project name.
     {
-        static void Main(string[] args)
-        
+        static class Program
+        {
+            static void Main(string[] args)
+            {
                 Console.WriteLine("Hello, World!");
 
                 // Declare without initializing.
@@ -75,7 +78,7 @@ namespace StringApp
                 Console.WriteLine($"Concat 2: {s11}");
                 // Output: A string is more than the sum of its chars.
 
-                
+
                 // -=================== Join (Объединение строк)
                 string join_str1 = "Have";
                 string join_str2 = "a nice";
@@ -398,17 +401,77 @@ namespace StringApp
                 Console.WriteLine($"Updated Capacity: {updatedCapacity}");
 
 
+
+
+            // -=================== Alex Trostyanko, [25.11.2023 12:41]
+            // -=================== Регулярные выражения (Regex) ===================-
+            // -=================== Cоответствие строки регулярному выражению
+            string input = "Hello, 123!";
+                string pattern = @"(\d+)"; // Шаблон: одна или более цифр
+
+                bool isMatch = Regex.IsMatch(input, pattern);
+
+                if (isMatch)
+                {
+                    Console.WriteLine("Строка содержит цифры.");
+                }
+                else
+                {
+                    Console.WriteLine("Строка не содержит цифры.");
+                }
+
+                Alex Trostyanko, [25.11.2023 12:51]
+// -=================== Извлечение подстрок с использованием групп
+            // -=================== Пример 1
+            string input1 = "Дата: 2023-11-19";
+                string pattern1 = @"Дата: (\d{4}-\d{2}-\d{2})"; // Группа для извлечения даты
+
+                Match match = Regex.Match(input1, pattern1);
+
+                if (match.Success)
+                {
+                    string date = match.Groups[1].Value;
+                    Console.WriteLine($"Извлеченная дата: {date}");
+                }
+                else
+                {
+                    Console.WriteLine("Дата не найдена.");
+                }
+
+                // -=================== Пример 2
+                string input11 = "Дата: 2023-11-19, Дата: 2023-12-25";
+                string pattern12 = @"Дата: (\d{4}-\d{2}-\d{2})"; // Группа для извлечения даты
+
+                MatchCollection matches = Regex.Matches(input11, pattern12);
+
+                if (matches.Count > 0)
+                {
+                    Console.WriteLine($"Найдено {matches.Count} вхождений:");
+
+                    foreach (Match matchItem in matches)
+                    {
+                        string date = matchItem.Groups[1].Value;
+                        Console.WriteLine($"Извлеченная дата: {date}");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Дата не найдена.");
+                }
+
+                // -=================== Замена с использованием регулярного выражения
+                string input2 = "Текст с цифрами: 12345 и 67890";
+                string pattern2 = @"\d+"; // = @"(\d+) Шаблон: одна или более цифр
+
+                string replacement = "###";
+
+                string result2 = Regex.Replace(input2, pattern2, replacement);
+
+                Console.WriteLine($"Исходная строка: {input2}");
+                Console.WriteLine($"Строка после замены: {result2}");
+
+
+
             }
         }
     }
-
-
-
-
-
-
-
-
-
-}
-}
