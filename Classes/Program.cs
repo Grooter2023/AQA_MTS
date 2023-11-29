@@ -57,6 +57,11 @@ namespace Classes
                 Console.WriteLine($"{greetingMessage}, {name}!");
             }
 
+            DisplayGreeting("Hello"); // Hello,Гость!
+            DisplayGreeting("Hello", "Alex"); // Hello,Alex!
+            DisplayGreeting(" Alex", "Hello"); //  Alex,Hello!
+
+
             // -=================== Метод с переменным числом аргументов ===================-
             int CalculateSum(params int[] numbers)
             {
@@ -128,11 +133,55 @@ namespace Classes
             // -=================== Возврат значения
             int GetPersonAge()
             {
-                return 25;
+               return 25;
+
             }
             
             Console.WriteLine($"Age: {GetPersonAge()}");
+
+            // -=================== Передача параметров ===================-
+            // -=================== По значению
+
+            void SimpleAdd(int x, int y) //
+            {
+                int ans = x + y;
+                // Вызывающий код не увидит эти изменения т.к модифицируется копия исходных данных
+                //  х = 10000;
+                //  y = 88888;
+            }
+
+
+            // -=================== По ссылке ===================-
+            // -=================== Out
+            // Значения выходных параметров должны быть установлены внутри вызываемого метода
+            static void OutAdd (int x, int y, out int ans)
+            {
+                ans = x + y;
+
+                return x * y;
+            }
+
+            int mult = OutAdd(90, 90, out ans1);
+
+            int ans; // т.к не задано значение, то по умолчанию установится 0
+            OutAdd(90, 90,out ans);
+
+            Console.WriteLine("OutAdd: 90 + 90 = {0}", ans);  // OutAdd: 90 + 90 = 180
+            Console.WriteLine("OutAdd: 90 + 90 = {0}", ans1); // OutAdd: 90 + 90 = 180
+            Console.WriteLine("OutAdd: 90 + 90 = {0}", mult); // OutAdd: 90 * 90 = 8100
+
             
+            // -=================== Ref
+            void ModifyValue(ref int value)
+            {
+                //value = value * 2;
+            }
+
+            int mainValue = 5; // обязательно нужно инициализировать !Не обязательноо менять
+            Console.WriteLine($"mainValue is {mainValue}");
+            ModifyValue(ref mainValue);
+            Console.WriteLine($"mainValue now is {mainValue}");
+
             // -=================== Возврат нескольких значений
             (string, int) GetPersonInfo()
             {
