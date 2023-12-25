@@ -3,41 +3,27 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abstraction", "Abstraction\Abstraction.csproj", "{94833F7F-1958-4711-B842-BB0C1A807A55}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Encapsulation", "Encapsulation\Encapsulation.csproj", "{DD35220B-E138-47FD-9D2A-E995F4E3B297}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inheritance", "Inheritance\Inheritance.csproj", "{20F661DD-B600-43C7-9357-B16E52F4E9CC}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Polymorphism", "Polymorphism\Polymorphism.csproj", "{C9FDA55D-FF03-4299-A359-70FC2A0BB05D}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task_two", "Task_two", "{A4D1A3BA-024F-42ED-B6B3-744A33C2D86C}"
+	ProjectSection(SolutionItems) = preProject
+		Dentist.cs = Dentist.cs
+		Doctor.cs = Doctor.cs
+		Program.cs = Program.cs
+		Surgeon.cs = Surgeon.cs
+		Patient.cs = Patient.cs
+		Therapist.cs = Therapist.cs
+		TreatmentPlan.cs = TreatmentPlan.cs
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task_one", "Task_one", "{9E56481B-14C8-45BA-8B0B-07D064EE804C}"
+	ProjectSection(SolutionItems) = preProject
+		ClassForCounting.cs = ClassForCounting.cs
+		Equilateral.cs = Equilateral.cs
+		Isosceles.cs = Isosceles.cs
+		Rectangular.cs = Rectangular.cs
+		Versatile.cs = Versatile.cs
+	EndProjectSection
 EndProject
 Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{94833F7F-1958-4711-B842-BB0C1A807A55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{94833F7F-1958-4711-B842-BB0C1A807A55}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{94833F7F-1958-4711-B842-BB0C1A807A55}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{94833F7F-1958-4711-B842-BB0C1A807A55}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DD35220B-E138-47FD-9D2A-E995F4E3B297}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DD35220B-E138-47FD-9D2A-E995F4E3B297}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DD35220B-E138-47FD-9D2A-E995F4E3B297}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DD35220B-E138-47FD-9D2A-E995F4E3B297}.Release|Any CPU.Build.0 = Release|Any CPU
-		{20F661DD-B600-43C7-9357-B16E52F4E9CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{20F661DD-B600-43C7-9357-B16E52F4E9CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{20F661DD-B600-43C7-9357-B16E52F4E9CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{20F661DD-B600-43C7-9357-B16E52F4E9CC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C9FDA55D-FF03-4299-A359-70FC2A0BB05D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C9FDA55D-FF03-4299-A359-70FC2A0BB05D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C9FDA55D-FF03-4299-A359-70FC2A0BB05D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C9FDA55D-FF03-4299-A359-70FC2A0BB05D}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
