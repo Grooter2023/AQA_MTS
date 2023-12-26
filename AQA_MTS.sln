@@ -14,7 +14,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task_two", "Task_two", "{A4
 		TreatmentPlan.cs = TreatmentPlan.cs
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbstractClasses", "AbstractClasses\AbstractClasses.csproj", "{CF9FDAE3-F185-4F37-BBE2-8BDF78E152EA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interfaces", "Interfaces\Interfaces.csproj", "{CF202303-9E4D-4B5B-9404-E8F3B60C0F99}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF9FDAE3-F185-4F37-BBE2-8BDF78E152EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF9FDAE3-F185-4F37-BBE2-8BDF78E152EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF9FDAE3-F185-4F37-BBE2-8BDF78E152EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF9FDAE3-F185-4F37-BBE2-8BDF78E152EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF202303-9E4D-4B5B-9404-E8F3B60C0F99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF202303-9E4D-4B5B-9404-E8F3B60C0F99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF202303-9E4D-4B5B-9404-E8F3B60C0F99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF202303-9E4D-4B5B-9404-E8F3B60C0F99}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
