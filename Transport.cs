@@ -1,5 +1,7 @@
 ﻿using System;
 
+namespace Task_three;
+
 class Transport
 {
     public string Destination { get; set; }  

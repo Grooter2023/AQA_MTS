@@ -1,5 +1,7 @@
 ﻿using System;
 
+namespace Task_three;
+
 public class Program1
 {
     static void Main()

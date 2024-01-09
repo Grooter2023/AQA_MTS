@@ -1,4 +1,6 @@
-﻿namespace Task_two
+﻿using System;
+
+namespace Task_two;
 
 public class TreatmentPlan
 {

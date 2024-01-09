@@ -1,5 +1,7 @@
 ﻿using System;
 
+namespace Task_three;
+
 class Tramcar : Transport
 {
     // Конструктор

@@ -1,4 +1,6 @@
-﻿using Task_two;
+﻿using System;
+
+namespace Task_two;
 
 namespace Task_two
 
