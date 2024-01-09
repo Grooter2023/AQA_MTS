@@ -7,20 +7,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task_two", "Task_two", "{A4
 	ProjectSection(SolutionItems) = preProject
 		Dentist.cs = Dentist.cs
 		Doctor.cs = Doctor.cs
+		Patient.cs = Patient.cs
 		Program.cs = Program.cs
 		Surgeon.cs = Surgeon.cs
-		Patient.cs = Patient.cs
 		Therapist.cs = Therapist.cs
 		TreatmentPlan.cs = TreatmentPlan.cs
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task_one", "Task_one", "{9E56481B-14C8-45BA-8B0B-07D064EE804C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task_three", "Task_three", "{061AF8D7-B4D9-4CC0-BB6B-895F577A80C6}"
 	ProjectSection(SolutionItems) = preProject
-		ClassForCounting.cs = ClassForCounting.cs
-		Equilateral.cs = Equilateral.cs
-		Isosceles.cs = Isosceles.cs
-		Rectangular.cs = Rectangular.cs
-		Versatile.cs = Versatile.cs
+		Bus.cs = Bus.cs
+		Program1.cs = Program1.cs
+		Tramcar.cs = Tramcar.cs
+		Transport.cs = Transport.cs
+		Trolleybus.cs = Trolleybus.cs
 	EndProjectSection
 EndProject
 Global
