@@ -1,63 +1,30 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Exceptions;
-
-// -====================== Ошибка ======================-
-/*
-int[] array = new int[3];
-int value = array[5];
-*/
-
-
-// -====================== Исключение ======================-
-/*
-Object obj = null;
-obj.GetHashCode();
-*/
-
-
-// -====================== Checked Exceptions ======================-
-CheckedExceptions checkedExceptions = new CheckedExceptions();
-// Uncomment для формирования ошибки
-// checkedExceptions.ReadFile("file.txt");
-
-// -====================== Unchecked Exceptions ======================-
-UncheckedExceptions uncheckedExceptions = new UncheckedExceptions();
-// Uncomment для формирования ошибки
-// uncheckedExceptions.DivideNumbers(1, 0);
-
-// -====================== Использования try -> catch -> finally ======================-
-ExceptionUsage exceptionUsage = new ExceptionUsage();
-//exceptionUsage.Template();
-//exceptionUsage.ShortForm1();
-//exceptionUsage.ShortForm2();
-//exceptionUsage.ShortForm3();
-
-//exceptionUsage.ManyCatch();
-
-//exceptionUsage.FilterCatch(1, 0);
-//exceptionUsage.FilterCatch(0, 1);
-
-// -====================== Обработка исключений и условные конструкции ======================-
-/*string? data = Console.ReadLine();
-
-if (int.TryParse(data, out var x))
+﻿namespace Exceptions
 {
-    Console.WriteLine($"x = {x}");
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Тестирование с предопределенными данными
+            Console.WriteLine("Тестирование с предопределенными данными:");
+            TestValidation("myLogin", "myP@ssw0rd", "myP@ssw0rd");
+
+            // Тестирование с вводом пользователя
+            Console.WriteLine("\nВведите данные для тестирования:");
+            Console.Write("Логин: ");
+            string login = Console.ReadLine();
+            Console.Write("Пароль: ");
+            string password = Console.ReadLine();
+            Console.Write("Подтверждение пароля: ");
+            string confirmPassword = Console.ReadLine();
+
+            bool result = Authentication.ValidateCredentials(login, password, confirmPassword);
+            Console.WriteLine($"Результат валидации: {result}");
+        }
+        //Метод возвращает true, если все значения верны или false в другом случае
+        static void TestValidation(string login, string password, string confirmPassword)
+        {
+            bool result = Authentication.ValidateCredentials(login, password, confirmPassword);
+            Console.WriteLine($"Результат валидации: {result}");
+        }
+    }
 }
-else
-{
-    Console.WriteLine("Некорректный ввод...");
-}
-*/
-
-ThrowExceptions throwExceptions = new ThrowExceptions();
-//throwExceptions.CheckUsername();
-//throwExceptions.CheckUsername1();
-
-
-// -====================== Собственные исключения ======================-
-CustomExceptionUsage customExceptionUsage = new CustomExceptionUsage();
-// customExceptionUsage.Run();
-// customExceptionUsage.ProcessInput(" ");
-customExceptionUsage.UseCustomArgumentException();
