@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exceptions", "Exceptions\Exceptions.csproj", "{5F6D906C-A06A-4923-BEC8-7BB83B9DB02E}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Collections", "Collections\Collections.csproj", "{39EA6275-C55E-4E38-BB18-8A17DD9AFE2F}"
 EndProject
 Global
@@ -13,10 +11,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5F6D906C-A06A-4923-BEC8-7BB83B9DB02E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5F6D906C-A06A-4923-BEC8-7BB83B9DB02E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5F6D906C-A06A-4923-BEC8-7BB83B9DB02E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5F6D906C-A06A-4923-BEC8-7BB83B9DB02E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{39EA6275-C55E-4E38-BB18-8A17DD9AFE2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{39EA6275-C55E-4E38-BB18-8A17DD9AFE2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39EA6275-C55E-4E38-BB18-8A17DD9AFE2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
