@@ -2,7 +2,7 @@
 
 
 using Event;
-
+  
 class ClientDelegateProgram
 {
     public delegate int CalculateDiscount(ClientType clientType);

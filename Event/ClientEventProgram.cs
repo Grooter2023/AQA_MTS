@@ -2,7 +2,7 @@
 
 
 using Event;
-
+  
 class ClientEventProgram
 {
     public delegate void Notificate(string email);

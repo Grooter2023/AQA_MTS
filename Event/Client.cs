@@ -1,5 +1,5 @@
 namespace Event;
-
+  
 public class Client
 {
     public ClientType Type { get; set; }
