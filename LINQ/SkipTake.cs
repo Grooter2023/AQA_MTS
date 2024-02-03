@@ -50,3 +50,5 @@ public class SkipTake
         PrintHelper.Print(queryResult, s => Console.WriteLine(s));
     }
 }
+
+

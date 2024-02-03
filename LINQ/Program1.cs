@@ -52,3 +52,4 @@ class Program1
     
     record class Person(string Name, int Age);
 }
+

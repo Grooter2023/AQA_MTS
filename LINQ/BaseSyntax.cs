@@ -68,3 +68,4 @@ public class BaseSyntax
         Console.WriteLine($"Char: {test.GetChar(0)}");
     }
 }
+

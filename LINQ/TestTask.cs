@@ -21,3 +21,4 @@ public class TestTask
         Console.WriteLine(_testObjectSet.Where(obj => obj.Age == 45).Select(obj => obj).Count());
     }
 }
+

@@ -25,3 +25,4 @@ public class TwoInOne
         Console.WriteLine($"{maxResult}");
     }
 }
+

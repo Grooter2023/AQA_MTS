@@ -7,3 +7,4 @@ public static class ExtendString
         return value[index];
     }
 }
+
