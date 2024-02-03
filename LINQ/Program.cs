@@ -1,73 +1,28 @@
-namespace LINQ;
+﻿using System;
 
-public class Program
+namespace LINQ.Third_homework;
+
+class Program
 {
     static void Main()
     {
-        // Testing Task
-        TestTask testTask = new TestTask();
-        testTask.Solve();
-        
-        // Base Sytanx
-        new BaseSyntax().RunQuerySyntax();
-        new BaseSyntax().RunMethodSyntax();
-        new BaseSyntax().RunStringExtension();
-        
-        // Where
-        new Where().RunQuerySyntax();
-        new Where().RunMethodSyntax();
-        
-        // Select
-        new Select().RunQuerySyntax();
-        new Select().RunMethodSyntax();
-        
-        // Два в одном
-        new TwoInOne().run();
-        
-        // Переменные
-        new Variables().RunQuerySyntax();
-        new Variables().RunMethodSyntax();
-        
-        // Агрегация данных
-        new DataAggregation().RunQuerySyntax(); 
-        new DataAggregation().RunMethodSyntax(); 
-        
-        // Сортировка
-        new OrderBy().RunQuerySyntax();
-        new OrderBy().RunMethodSyntax();
+        List<string> strings = new List<string>
+        {
+            "A", "B", "AB", "C", "ABC", "D"
+        };
 
-        // Группировка
-        // ????
-        
-        //Объединение, пересечение и разность коллекций:
-        // разность
-        new Except().RunQuerySyntax();
-        new Except().RunMethodSyntax();
-        
-        // Пересечение
-        new Intersect().RunQuerySyntax();
-        new Intersect().RunMethodSyntax();
-        
-        // Объединение
-        new Union().RunQuerySyntax();
-        new Union().RunMethodSyntax();
-        
-        // Удаление дубликатов
-        new Distinct().RunQuerySyntax();
-        new Distinct().RunMethodSyntax();
-        
-        // Сложный объект (Union)
-        new ComplexObject().RunQuerySyntax();
-        new ComplexObject().RunMethodSyntax();
-        
-        // Aggregation
-        new Aggregation().RunQuerySyntax();
-        new Aggregation().RunMethodSyntax();
-     
-        // Single Item
-        new SingleItem().RunQuerySyntax();
-        new SingleItem().RunMethodSyntax();
-        
-        // Методы Skip и Take
+        // Cортировка строк
+        var sortedStrings = strings
+            .GroupBy(s => s.Length)  
+            .Select(g => g.OrderByDescending(s => s))  
+            .SelectMany(g => g)  
+            .OrderBy(s => s.Length)  
+            .ThenByDescending(s => s);  
+
+        Console.WriteLine("Отсортированная последовательность:");
+        foreach (var str in sortedStrings)
+        {
+            Console.WriteLine(str); 
+        }
     }
 }
