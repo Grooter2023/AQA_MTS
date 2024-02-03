@@ -9,3 +9,4 @@ public class Client
     // Добавить во второй части
     public string Email { get; set; }
 }
+
