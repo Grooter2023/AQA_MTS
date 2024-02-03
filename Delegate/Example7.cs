@@ -22,3 +22,4 @@ public class Example7
     private void ShowMessage() => Console.WriteLine("Have fun!"); 
     private int Add(int x, int y) => x + y;
 }
+

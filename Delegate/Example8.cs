@@ -18,3 +18,4 @@ public class Example8
     decimal Square(int n) => n * n;
     int Double(int n) => n + n;
 }
+

@@ -19,3 +19,4 @@ public class Example6
         Console.WriteLine($"Текущая цена: {price}");
     }
 }
+

@@ -25,3 +25,4 @@ class Example2
         return "successful";
     }
 }
+

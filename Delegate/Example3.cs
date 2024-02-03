@@ -18,3 +18,4 @@ public class Example3
 
     private void ShowMessage2() => Console.WriteLine("See you!");
 }
+

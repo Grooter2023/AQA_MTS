@@ -6,3 +6,4 @@ public interface IManager
 {
     event Notify Notified;
 }  
+

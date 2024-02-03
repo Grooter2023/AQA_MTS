@@ -7,3 +7,4 @@ public class DataCorrection
         Console.WriteLine($"Data was updated according to price: {price}");
     }
 }
+
