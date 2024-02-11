@@ -8,3 +8,4 @@ public class SimpleTest
         Console.WriteLine($"{this}: Test...");
     }
 }
+

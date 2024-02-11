@@ -7,3 +7,4 @@ public enum SeverityLevel
     Minor,
     Trivial
 }
+
