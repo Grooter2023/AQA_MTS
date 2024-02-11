@@ -1,3 +1,4 @@
+using NUnit.Framework;
 namespace NUnitProject;
 
 [AttributeUsage(AttributeTargets.Method, AllowMultiple = false)]
