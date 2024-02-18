@@ -2,10 +2,9 @@ using OpenQA.Selenium;
 using SeleniumBasic.Core;
 
 namespace SeleniumBasic.Tests;
-// Для запуска в параллель тестов
+
 [Parallelizable(scope: ParallelScope.All)]
 [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
-
 public class BaseTest
 {
     protected IWebDriver Driver { get; set; }

@@ -1,7 +1,8 @@
 using System.Reflection;
 using Microsoft.Extensions.Configuration;
+using SeleniumBasic.Utilites.Configuration;
 
-namespace SeleniumBasic.Utilites.Configuration
+namespace SeleniumBasic.Helpers.Configuration
 {
     public static class Configurator
     {
@@ -38,6 +39,8 @@ namespace SeleniumBasic.Utilites.Configuration
                 var child = Configuration.GetSection("AppSettings");
 
                 appSettings.URL = child["URL"];
+                appSettings.Username = child["Username"];
+                appSettings.Password = child["Password"];
 
                 return appSettings;
             }
