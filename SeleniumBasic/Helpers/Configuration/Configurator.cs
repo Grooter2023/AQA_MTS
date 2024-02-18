@@ -1,6 +1,5 @@
 using System.Reflection;
 using Microsoft.Extensions.Configuration;
-using SeleniumBasic.Utilites.Configuration;
 
 namespace SeleniumBasic.Helpers.Configuration
 {
