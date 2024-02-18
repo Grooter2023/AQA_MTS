@@ -1,15 +1,14 @@
+using System.Reflection;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
-using WebDriverManager;
-using WebDriverManager.DriverConfigs.Impl;
 
-namespace NUnitTest.Core;
+namespace SeleniumBasic.Core;
 
 public class AdvancedDriver
 {
-    private string path = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
-    
+    private string basePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+
     public IWebDriver GetChromeDriver()
     {
         var chromeOptions = new ChromeOptions();
@@ -17,11 +16,11 @@ public class AdvancedDriver
         chromeOptions.AddArguments("--disable-gpu");
         chromeOptions.AddArguments("--disable-extensions");
         //chromeOptions.AddArguments("--headless");
-            
+
         chromeOptions.SetLoggingPreference(LogType.Browser, LogLevel.All);
         chromeOptions.SetLoggingPreference(LogType.Driver, LogLevel.All);
 
-        return new ChromeDriver(path + @"/Resources/", chromeOptions);
+        return new ChromeDriver(basePath + @"\Resources\", chromeOptions);
     }
 
     public IWebDriver GetFirefoxDriver()
@@ -30,15 +29,15 @@ public class AdvancedDriver
             "image/png,image/gif,image/jpeg,image/pjpeg,application/pdf,text/csv,application/vnd.ms-excel," +
             "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" +
             "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
-            
+
         var ffOptions = new FirefoxOptions();
         var profile = new FirefoxProfile();
-            
+
         profile.SetPreference("browser.download.folderList", 2);
         profile.SetPreference("browser.helperApps.neverAsk.saveToDisk", mimeTypes);
         profile.SetPreference("browser.helperApps.neverAsk.openFile", mimeTypes);
         ffOptions.Profile = profile;
-            
+
         ffOptions.SetLoggingPreference(LogType.Browser, LogLevel.All);
         ffOptions.SetLoggingPreference(LogType.Driver, LogLevel.All);
 

@@ -1,19 +1,19 @@
-using NUnit.Framework;
-using NUnitTest.Core;
-using NUnitTest.Utilites.Configuration;
 using OpenQA.Selenium;
+using SeleniumBasic.Core;
 
-namespace NUnitTest.Tests;
+namespace SeleniumBasic.Tests;
+// Для запуска в параллель тестов
+[Parallelizable(scope: ParallelScope.All)]
+[FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
 
 public class BaseTest
 {
     protected IWebDriver Driver { get; set; }
-    
+
     [SetUp]
-    public void Setup()
+    public void FactoryDriverTest()
     {
-        Driver = new Browser().Driver!;
-        Driver.Navigate().GoToUrl(Configurator.AppSettings.URL);
+        Driver = new Browser().Driver;
     }
 
     [TearDown]
@@ -21,4 +21,5 @@ public class BaseTest
     {
         Driver.Quit();
     }
+
 }
