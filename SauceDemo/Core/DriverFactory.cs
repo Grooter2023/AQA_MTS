@@ -1,11 +1,10 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Firefox;
 using WebDriverManager;
 using WebDriverManager.DriverConfigs.Impl;
 using LogLevel = OpenQA.Selenium.LogLevel;
 
-namespace SeleniumBasic.Core;
+namespace SauceDemo.Core;
 
 public class DriverFactory
 {
@@ -23,5 +22,4 @@ public class DriverFactory
         new DriverManager().SetUpDriver(new ChromeConfig());
         return new ChromeDriver(chromeOptions);
     }
-
 }
