@@ -1,6 +1,4 @@
-﻿using NUnitTest.Core;
-using NUnitTest.Helpers.Configuration;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using SeleniumBasic.Helpers.Configuration;
 
 namespace SeleniumBasic.Core

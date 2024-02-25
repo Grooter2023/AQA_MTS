@@ -1,6 +1,6 @@
 using OpenQA.Selenium;
 
-namespace NUnitTest.Tests;
+namespace SeleniumBasic.Tests;
 
 public class AlertTests : BaseTest
 {
@@ -9,13 +9,15 @@ public class AlertTests : BaseTest
     {
         Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/javascript_alerts");
 
-        Driver.FindElement(By.XPath("//button[. = 'Click for JS Alert']")).Click();
+        Driver.FindElement(By.XPath("//button[text() = 'Click for JS Alert']")).Click();
 
         IAlert alert = Driver.SwitchTo().Alert();
 
         Assert.That(alert.Text, Is.EqualTo("I am a JS Alert"));
 
         alert.Accept();
+
+        Driver.FindElement(By.XPath("//button[text() = 'Click for JS Alert']")).Click();
     }
 
     [Test]
@@ -35,19 +37,19 @@ public class AlertTests : BaseTest
     }
 
     [Test]
-    public void PromptAlertTest() 
+    public void PromptAlertTest()
     {
         Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/javascript_alerts");
-        
+
         Driver.FindElement(By.XPath("//button[. = 'Click for JS Prompt']")).Click();
-        
+
         IAlert alert = Driver.SwitchTo().Alert();
-        
+
         Assert.That(alert.Text, Is.EqualTo("I am a JS prompt"));
-        
+
         alert.SendKeys("Everything is OK!");
         alert.Accept();
-        
-        Thread.Sleep(5000);
+
+        Thread.Sleep(3000);
     }
 }

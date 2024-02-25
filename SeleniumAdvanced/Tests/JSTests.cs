@@ -1,6 +1,6 @@
 using OpenQA.Selenium;
 
-namespace NUnitTest.Tests;
+namespace SeleniumBasic.Tests;
 
 public class JSTests : BaseTest
 {
@@ -8,11 +8,11 @@ public class JSTests : BaseTest
     public void JsTest()
     {
         Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/checkboxes");
-        
+
         var webElement = WaitsHelper.WaitForExists(By.CssSelector("#checkboxes input"));
-        
-        IJavaScriptExecutor javascriptExecutor = (IJavaScriptExecutor) Driver;
-        
+
+        IJavaScriptExecutor javascriptExecutor = (IJavaScriptExecutor)Driver;
+
         Thread.Sleep(2000);
         javascriptExecutor.ExecuteScript("arguments[0].click();", webElement);
         Thread.Sleep(2000);
@@ -22,10 +22,10 @@ public class JSTests : BaseTest
     public void ActionTest1()
     {
         Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/drag_and_drop");
-        
+
         var source = Driver.FindElement(By.Id("column-a"));
         var target = Driver.FindElement(By.Id("column-b"));
-        
+
         Thread.Sleep(3000);
         DragAndDropJs(source, target, Driver);
         Thread.Sleep(3000);
@@ -34,7 +34,7 @@ public class JSTests : BaseTest
 
     private void DragAndDropJs(IWebElement source, IWebElement destination, IWebDriver _driver)
     {
-        IJavaScriptExecutor js = (IJavaScriptExecutor) _driver;
+        IJavaScriptExecutor js = (IJavaScriptExecutor)_driver;
         js.ExecuteScript("function createEvent(typeOfEvent) {\n"
                          + "var event =document.createEvent(\"CustomEvent\");\n"
                          + "event.initCustomEvent(typeOfEvent,true, true, null);\n"

@@ -1,19 +1,19 @@
-using NUnitTest.Core;
-using NUnitTest.Helpers;
-using NUnitTest.Helpers.Configuration;
 using OpenQA.Selenium;
+using SeleniumBasic.Core;
+using SeleniumBasic.Helpers;
+using SeleniumBasic.Helpers.Configuration;
 
-namespace NUnitTest.Tests;
+namespace SeleniumBasic.Tests;
 
-[Parallelizable(scope: ParallelScope.All)]
-[FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
+//[Parallelizable(scope: ParallelScope.All)]
+//[FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
 public class BaseTest
 {
     protected IWebDriver Driver { get; private set; }
     protected WaitsHelper WaitsHelper { get; private set; }
 
     [SetUp]
-    public void Setup()
+    public void FactoryDriverTest()
     {
         Driver = new Browser().Driver;
         WaitsHelper = new WaitsHelper(Driver, TimeSpan.FromSeconds(Configurator.WaitsTimeout));
@@ -24,4 +24,5 @@ public class BaseTest
     {
         Driver.Quit();
     }
+
 }

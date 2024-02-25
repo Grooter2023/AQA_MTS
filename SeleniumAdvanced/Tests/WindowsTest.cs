@@ -1,6 +1,6 @@
 using OpenQA.Selenium;
 
-namespace NUnitTest.Tests;
+namespace SeleniumBasic.Tests;
 
 public class WindowsTest : BaseTest
 {
@@ -9,8 +9,8 @@ public class WindowsTest : BaseTest
     {
         Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/windows");
 
-        String originalWindow = Driver.CurrentWindowHandle;
-        
+        string originalWindowHandle = Driver.CurrentWindowHandle;
+
         Driver.FindElement(By.LinkText("Click Here")).Click();
 
         var windowHandlesSet = Driver.WindowHandles;
@@ -18,12 +18,13 @@ public class WindowsTest : BaseTest
         Driver.SwitchTo().Window(windowHandlesSet[1]);
 
         Thread.Sleep(3000);
+
         Assert.That(Driver.FindElement(By.TagName("h3")).Text, Is.EqualTo("New Window"));
 
         Driver.Close();
-        
-        Thread.Sleep(3000);
-        Driver.SwitchTo().Window(originalWindow);
-        Assert.IsTrue(Driver.FindElement(By.LinkText("Click Here")).Displayed);
+
+        Driver.SwitchTo().Window(originalWindowHandle);
+
+        Assert.That(Driver.FindElement(By.LinkText("Click Here")).Displayed);
     }
 }
