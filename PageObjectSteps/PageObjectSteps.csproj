@@ -11,6 +11,14 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <None Remove="appsettings.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="appsettings.json" />
+    </ItemGroup>
+
+    <ItemGroup>
         <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
         <PackageReference Include="ExtentReports" Version="5.0.2" />
         <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
@@ -43,6 +51,10 @@
 
     <ItemGroup>
       <Folder Include="Resources\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\SeleniumAdvanced\PageObjectSimple.csproj" />
     </ItemGroup>
 
 </Project>

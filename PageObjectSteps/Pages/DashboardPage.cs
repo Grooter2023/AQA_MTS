@@ -1,36 +1,30 @@
 using OpenQA.Selenium;
-using PageObjectSteps.Helpers;
-using PageObjectSteps.Helpers.Configuration;
 
 namespace PageObjectSteps.Pages;
 
-public abstract class BasePage
+public class DashboardPage : BasePage
 {
-    protected IWebDriver Driver { get; private set; }
-    protected WaitsHelper WaitsHelper { get; private set; }
+    private static string END_POINT = "index.php?/dashboard";
 
-    public BasePage(IWebDriver driver)
+    // Описание элементов
+    private static readonly By TitleLabelBy = By.ClassName("page_title");
+
+
+    // Инициализация класса
+    public DashboardPage(IWebDriver driver) : base(driver)
     {
-        Driver = driver;
-        WaitsHelper = new WaitsHelper(Driver, TimeSpan.FromSeconds(Configurator.WaitsTimeout));
     }
 
-    public BasePage(IWebDriver driver, bool openPageByUrl)
+    protected override string GetEndpoint()
     {
-        Driver = driver;
-        WaitsHelper = new WaitsHelper(Driver, TimeSpan.FromSeconds(Configurator.WaitsTimeout));
-
-        if (openPageByUrl)
-        {
-            OpenPageByURL();
-        }
+        return END_POINT;
     }
 
-    protected abstract string GetEndpoint();
-    public abstract bool IsPageOpened();
-
-    protected void OpenPageByURL()
+    public override bool IsPageOpened()
     {
-        Driver.Navigate().GoToUrl(Configurator.AppSettings.URL + GetEndpoint());
+        return TitleLabel.Text.Trim().Equals("All Projects");
     }
+
+    // Атомарные Методы
+    public IWebElement TitleLabel => WaitsHelper.WaitForExists(TitleLabelBy);
 }

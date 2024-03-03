@@ -1,7 +1,6 @@
 ﻿using OpenQA.Selenium;
-using SeleniumBasic.Pages;
 
-namespace NUnitTest.Pages
+namespace SeleniumBasic.Pages
 {
     public class LoginPage : BasePage
     {

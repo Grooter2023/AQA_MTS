@@ -11,6 +11,10 @@ public abstract class ProjectBasePage : BasePage
     {
     }
 
+    protected ProjectBasePage(IWebDriver driver)
+    {
+    }
+
     // Атомарные Методы
     public IWebElement NameInput => WaitsHelper.WaitForExists(NameInputBy);
 }

@@ -2,19 +2,12 @@ using OpenQA.Selenium;
 
 namespace PageObjectSteps.Steps;
 
-public class NavigationSteps : BaseSteps
+public class BaseSteps
 {
-    public NavigationSteps(IWebDriver driver) : base(driver)
+    protected IWebDriver Driver;
+
+    public BaseSteps(IWebDriver driver)
     {
-    }
-
-    public void NavigateToProducts()
-    {
-
-    }
-
-    public void NavigateToCart()
-    {
-
+        Driver = driver;
     }
 }

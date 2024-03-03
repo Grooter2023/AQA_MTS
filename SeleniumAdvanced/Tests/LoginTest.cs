@@ -1,5 +1,4 @@
-﻿using NUnitTest.Pages;
-using SeleniumBasic.Helpers.Configuration;
+﻿using SeleniumBasic.Helpers.Configuration;
 using SeleniumBasic.Pages;
 
 namespace SeleniumBasic.Tests;
@@ -24,8 +23,8 @@ public class LoginTest : BaseTest
         // Проверка
         Assert.That(
             new LoginPage(Driver)
-                .IncorrectLogin("ssdd", "")
-                .ErrorLabel.Text.Trim(),
-            Is.EqualTo("Email/Login or Password is incorrect. Please try again."));
+                .IncorrectLogin("ssdd", "") // метод возвращает экземпляр логин страницы
+                .ErrorLabel.Text.Trim(),//ожидаем на странице элемент ErrorLabel в котором мы получаем значение
+            Is.EqualTo("Email/Login or Password is incorrect. Please try again.")); // сравниваем с ожиданием 
     }
 }

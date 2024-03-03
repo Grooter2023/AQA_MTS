@@ -2,27 +2,25 @@ using OpenQA.Selenium;
 
 namespace PageObjectSteps.Pages.ProjectPages;
 
-public class AddProjectPage : ProjectBasePage
+public class ProjectBasePage : BasePage
 {
-    private static string END_POINT = "index.php?/admin/projects/add";
+    private static readonly By NameInputBy = By.Id("name");
 
-    // Описание элементов
-    private static readonly By AddButtonBy = By.Id("name");
+    public ProjectBasePage(IWebDriver driver) : base(driver)
+    {
+    }
 
-    public AddProjectPage(IWebDriver driver) : base(driver)
+    public ProjectBasePage(IWebDriver driver, bool openPageByUrl) : base(driver, openPageByUrl)
     {
     }
 
     protected override string GetEndpoint()
     {
-        return END_POINT;
+        throw new NotImplementedException();
     }
 
     public override bool IsPageOpened()
     {
         throw new NotImplementedException();
     }
-
-    // Атомарные Методы
-    public IWebElement AddButton => Driver.FindElement(AddButtonBy);
 }

@@ -1,9 +1,8 @@
 using OpenQA.Selenium;
 using SauceDemo.Core;
-using SauceDemo.Helpers;
 using SauceDemo.Helpers.Configuration;
 
-namespace SauceDemo.Tests;
+namespace SauceDemo.Helpers;
 
 //[Parallelizable(scope: ParallelScope.All)]
 //[FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
