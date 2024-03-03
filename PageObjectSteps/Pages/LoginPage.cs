@@ -5,32 +5,17 @@ namespace PageObjectSteps.Pages
     public class LoginPage : BasePage
     {
         private static string END_POINT = "";
-        
+
         // Описание элементов
         private static readonly By EmailInputBy = By.Id("name");
         private static readonly By PswInputBy = By.Id("password");
         private static readonly By RememberMeCheckboxBy = By.Id("rememberme");
         private static readonly By LoginInButtonBy = By.Id("button_primary");
-        
+        private static readonly By ErrorLabelBy = By.CssSelector("[data-testid='loginErrorText']");
+
         // Инициализация класса
-        public LoginPage(IWebDriver driver, bool openPageByUrl) : base(driver, openPageByUrl)
+        public LoginPage(IWebDriver driver) : base(driver)
         {
-        }
-        public LoginPage(IWebDriver driver) : base(driver, false)
-        {
-        }
-        
-        public override bool IsPageOpened()
-        {
-            try
-            {
-                return LoginInButton().Displayed;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-            
         }
 
         protected override string GetEndpoint()
@@ -38,25 +23,23 @@ namespace PageObjectSteps.Pages
             return END_POINT;
         }
 
+        public override bool IsPageOpened()
+        {
+            return LoginInButton.Displayed && EmailInput.Displayed;
+        }
+
         // Методы
-        public IWebElement EmailInput()
-        {
-            return Driver.FindElement(EmailInputBy);  
-        }
+        // Методы поиска элементов
+        public IWebElement EmailInput => WaitsHelper.WaitForExists(EmailInputBy);
+        public IWebElement ErrorLabel => WaitsHelper.WaitForExists(ErrorLabelBy);
+        public IWebElement PswInput => WaitsHelper.WaitForExists(PswInputBy);
+        public IWebElement RememberMeCheckbox => WaitsHelper.WaitForExists(RememberMeCheckboxBy);
+        public IWebElement LoginInButton => WaitsHelper.WaitForExists(LoginInButtonBy);
 
-        public IWebElement PswInput()
-        {
-            return Driver.FindElement(PswInputBy);
-        }
+        // Методы действий с элементами
+        public void ClickLoginInButton() => LoginInButton.Click();
 
-        public IWebElement RememberMeCheckbox()
-        {
-            return Driver.FindElement(RememberMeCheckboxBy);  
-        }
-
-        public IWebElement LoginInButton()
-        {
-           return Driver.FindElement(LoginInButtonBy);
-        }
+        // Методы получения свойств
+        public string GetErrorLabelText() => ErrorLabel.Text.Trim();
     }
 }

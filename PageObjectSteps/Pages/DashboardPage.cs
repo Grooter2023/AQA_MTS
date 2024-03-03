@@ -1,40 +1,36 @@
 using OpenQA.Selenium;
+using PageObjectSteps.Helpers;
+using PageObjectSteps.Helpers.Configuration;
 
-namespace PageObjectSteps.Pages
+namespace PageObjectSteps.Pages;
+
+public abstract class BasePage
 {
-    public class DashboardPage : BasePage
+    protected IWebDriver Driver { get; private set; }
+    protected WaitsHelper WaitsHelper { get; private set; }
+
+    public BasePage(IWebDriver driver)
     {
-        private static string END_POINT = "index.php?/dashboard";
-        
-        // Описание элементов
-        private static readonly By SidebarProjectsAddButtonBy = By.Id("sidebar-projects-add");
-        
-        public DashboardPage(IWebDriver driver, bool openPageByUrl) : base(driver, openPageByUrl)
-        {
-        }
+        Driver = driver;
+        WaitsHelper = new WaitsHelper(Driver, TimeSpan.FromSeconds(Configurator.WaitsTimeout));
+    }
 
-        public DashboardPage(IWebDriver driver) : base(driver)
-        {
-        }
+    public BasePage(IWebDriver driver, bool openPageByUrl)
+    {
+        Driver = driver;
+        WaitsHelper = new WaitsHelper(Driver, TimeSpan.FromSeconds(Configurator.WaitsTimeout));
 
-        public override bool IsPageOpened()
+        if (openPageByUrl)
         {
-            try
-            {
-                return SidebarProjectsAddButton.Displayed;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-            
+            OpenPageByURL();
         }
+    }
 
-        protected override string GetEndpoint()
-        {
-            return END_POINT;
-        }
+    protected abstract string GetEndpoint();
+    public abstract bool IsPageOpened();
 
-        public IWebElement SidebarProjectsAddButton => WaitsHelper.WaitForExists(SidebarProjectsAddButtonBy);
+    protected void OpenPageByURL()
+    {
+        Driver.Navigate().GoToUrl(Configurator.AppSettings.URL + GetEndpoint());
     }
 }

@@ -1,19 +1,20 @@
 using OpenQA.Selenium;
-using PageObjectSteps.Pages;
-using PageObjectSteps.Pages.ProjectPages;
 
 namespace PageObjectSteps.Steps;
 
-public class BaseStep
+public class NavigationSteps : BaseSteps
 {
-    protected IWebDriver Driver;
-
-    public LoginPage LoginPage => new LoginPage(Driver);
-    public DashboardPage DashboardPage => new DashboardPage(Driver);
-    public AddProjectPage AddProjectPage => new AddProjectPage(Driver);
-
-    public BaseStep(IWebDriver driver)
+    public NavigationSteps(IWebDriver driver) : base(driver)
     {
-        Driver = driver;
+    }
+
+    public void NavigateToProducts()
+    {
+
+    }
+
+    public void NavigateToCart()
+    {
+
     }
 }
