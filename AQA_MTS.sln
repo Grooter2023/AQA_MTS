@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeleniumAdvanced", "SeleniumAdvanced\SeleniumAdvanced.csproj", "{97CEB2E4-C0CB-4EEA-A029-40C00ABF518B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PageObjectSimple", "SeleniumAdvanced\PageObjectSimple.csproj", "{97CEB2E4-C0CB-4EEA-A029-40C00ABF518B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SauceDemo", "SauceDemo\SauceDemo.csproj", "{2E8D8F3A-90AA-4943-ADCA-6A2E618678BA}"
 EndProject
