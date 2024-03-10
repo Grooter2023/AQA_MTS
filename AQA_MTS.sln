@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Allure", "Allure\Allure.csproj", "{33E46310-AF2C-4693-8C6F-023BFE8DFBE8}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SauceDemo_PageObject_Steps", "SauceDemo\SauceDemo_PageObject_Steps.csproj", "{08086E75-8299-41DB-AFCA-6306C4CDC196}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{33E46310-AF2C-4693-8C6F-023BFE8DFBE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33E46310-AF2C-4693-8C6F-023BFE8DFBE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33E46310-AF2C-4693-8C6F-023BFE8DFBE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08086E75-8299-41DB-AFCA-6306C4CDC196}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08086E75-8299-41DB-AFCA-6306C4CDC196}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08086E75-8299-41DB-AFCA-6306C4CDC196}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08086E75-8299-41DB-AFCA-6306C4CDC196}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
