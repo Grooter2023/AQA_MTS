@@ -1,13 +1,13 @@
-﻿using Allure.Net.Commons;
+using System.Text;
+using Allure.Core;
+using Allure.Helpers;
+using Allure.Helpers.Configuration;
+using Allure.Net.Commons;
+using Allure.Steps;
 using NUnit.Allure.Core;
 using OpenQA.Selenium;
-using SauceDemo_PageObject_Steps.Core;
-using SauceDemo_PageObject_Steps.Helpers;
-using SauceDemo_PageObject_Steps.Helpers.Configuration;
-using SauceDemo_PageObject_Steps.Steps;
-using System.Text;
 
-namespace SauceDemo_PageObject_Steps.Tests;
+namespace Allure.Tests;
 
 [Parallelizable(scope: ParallelScope.All)]
 [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
@@ -16,8 +16,10 @@ public class BaseTest
 {
     protected IWebDriver Driver { get; private set; }
     protected WaitsHelper WaitsHelper { get; private set; }
-    protected SaucedemoLoginSteps NavigationSteps;
-    protected ProductSteps ProductSteps;
+
+    protected NavigationSteps NavigationSteps;
+    protected ProjectSteps ProjectSteps;
+    protected AllureSteps AllureSteps;
 
     [OneTimeSetUp]
     public static void GlobalSetup()
@@ -26,26 +28,34 @@ public class BaseTest
     }
 
     [SetUp]
-    public void FactoryDriverTest()
+    public void Setup()
     {
         Driver = new Browser().Driver;
         WaitsHelper = new WaitsHelper(Driver, TimeSpan.FromSeconds(Configurator.WaitsTimeout));
-
-        NavigationSteps = new SaucedemoLoginSteps(Driver);
-        ProductSteps = new ProductSteps(Driver);
+        
+        // Инициализация Steps
+        NavigationSteps = new NavigationSteps(Driver);
+        ProjectSteps = new ProjectSteps(Driver);
+        AllureSteps = new AllureSteps(Driver);
     }
-
-
+    
     [TearDown]
     public void TearDown()
     {
+        // Проверка, был ли тест сброшен
         try
         {
             if (TestContext.CurrentContext.Result.Outcome.Status == NUnit.Framework.Interfaces.TestStatus.Failed)
             {
+                // Создание скриншота
                 Screenshot screenshot = ((ITakesScreenshot)Driver).GetScreenshot();
                 byte[] screenshotBytes = screenshot.AsByteArray;
 
+                // Прикрепление скриншота к отчету Allure
+                // Вариант 1
+                AllureLifecycle.Instance.AddAttachment("Screenshot", "image/png", screenshotBytes);
+            
+                // Вариант 2
                 AllureApi.AddAttachment(
                     "data.txt",
                     "text/plain",
@@ -63,7 +73,7 @@ public class BaseTest
             Console.WriteLine(e);
             throw;
         }
-
+        
         Driver.Quit();
-    } 
+    }
 }

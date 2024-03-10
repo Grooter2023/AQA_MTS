@@ -1,14 +1,21 @@
-﻿using SauceDemo_PageObject_Steps.Helpers;
+﻿using Allure.Net.Commons;
+using NUnit.Allure.Attributes;
 using SauceDemo_PageObject_Steps.Helpers.Configuration;
 
 namespace SauceDemo_PageObject_Steps.Tests
 {
-    [TestFixture, Category("Smoke")]
+    [AllureEpic("Bdd")]
+    [AllureEpic("Web Interface")]
+    [AllureFeature("Essential feature", "Integration feature")]
     public class SaucedemoLoginTests : BaseTest
     {
         [Test, Order(1)]
         [Description("Checking for login standard user")]
-        [Severity(SeverityLevel.Critical)]
+        [AllureStory("Story1")]
+        [AllureSeverity((Allure.Net.Commons.SeverityLevel)SeverityLevel.critical)]
+        [AllureOwner("Anisimova Tany")]
+        [AllureLink("Website", "https://www.saucedemo.com")]
+        [AllureTms("TMS-001")]
         public void CheckForLoginStandardUser()
         {
             var username = Configurator.AppSettings.Username;
@@ -21,7 +28,11 @@ namespace SauceDemo_PageObject_Steps.Tests
 
         [Test, Order(2)]
         [Description("Checking a blocked login - \"locked_out_user\"")]
-        [Severity(SeverityLevel.Critical)]
+        [AllureStory("Story2")]
+        [AllureSeverity((Allure.Net.Commons.SeverityLevel)SeverityLevel.minor)]
+        [AllureOwner("Anisimova Tany")]
+        [AllureLink("Website", "https://www.saucedemo.com")]
+        [AllureTms("TMS-001")]
         public void CheckingABlockedLogin()
         {
             var errorText = "Epic sadface: Sorry, this user has been locked out.";
@@ -38,7 +49,11 @@ namespace SauceDemo_PageObject_Steps.Tests
 
         [Test, Order(3)]
         [Description("Checking without specifying a password")]
-        [Severity(SeverityLevel.Critical)]
+        [AllureStory("Story3")]
+        [AllureSeverity((Allure.Net.Commons.SeverityLevel)SeverityLevel.trivial)]
+        [AllureOwner("Anisimova Tany")]
+        [AllureLink("Website", "https://www.saucedemo.com")]
+        [AllureTms("TMS-001")]
         public void CheckingForNonExistentUser()
         {
             var errorText = "Epic sadface: Password is required";

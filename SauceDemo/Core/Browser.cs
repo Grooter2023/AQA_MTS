@@ -1,5 +1,4 @@
 ﻿using OpenQA.Selenium;
-using SauceDemo.Core;
 
 namespace SauceDemo_PageObject_Steps.Core;
 

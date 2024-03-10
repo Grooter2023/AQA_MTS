@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using Allure.Net.Commons;
+using NUnit.Allure.Attributes;
+using OpenQA.Selenium;
 using SauceDemo_PageObject_Steps.Pages;
 
 namespace SauceDemo_PageObject_Steps.Steps
@@ -17,9 +19,19 @@ namespace SauceDemo_PageObject_Steps.Steps
             return new InventoryPage(Driver, true);
         }
 
+        [AllureStep]
         public InventoryPage AddingProductCart()
         {
-            inventoryPage.AddBackpackButton.Click();
+            AllureLifecycle.Instance.UpdateStep(stepResult =>
+         stepResult.parameters.Add(
+             new Parameter
+             {
+                 name = "Started at",
+                 value = DateTime.Now.ToString()
+             }
+         ));
+
+         inventoryPage.AddBackpackButton.Click();
 
             return InventoryPage;
         }
