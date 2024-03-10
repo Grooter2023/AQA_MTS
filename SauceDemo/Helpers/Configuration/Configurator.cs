@@ -1,9 +1,9 @@
 ﻿using System.Reflection;
 using Microsoft.Extensions.Configuration;
 
-namespace SauceDemo.Helpers.Configuration
+namespace SauceDemo_PageObject_Steps.Helpers.Configuration
 {
-    public static class Configurator
+    internal class Configurator
     {
         private static readonly Lazy<IConfiguration> s_configuration;
         public static IConfiguration Configuration => s_configuration.Value;
@@ -38,15 +38,14 @@ namespace SauceDemo.Helpers.Configuration
                 var child = Configuration.GetSection("AppSettings");
 
                 appSettings.URL = child["URL"];
-                //appSettings.Username = child["Username"];
-                //appSettings.Password = child["Password"];
+                appSettings.Username = child["Username"];
+                appSettings.Password = child["Password"];
 
                 return appSettings;
             }
         }
 
         public static string? BrowserType => Configuration[nameof(BrowserType)];
-
-        public static double WaitsTimeout => Double.Parse(Configuration[nameof(WaitsTimeout)]);
+        public static double WaitsTimeout => double.Parse(Configuration[nameof(WaitsTimeout)]);
     }
 }

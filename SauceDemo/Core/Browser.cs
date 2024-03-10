@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
+using SauceDemo.Core;
 
-namespace SauceDemo.Core;
+namespace SauceDemo_PageObject_Steps.Core;
 
 public class Browser
 {
@@ -13,6 +14,5 @@ public class Browser
 
         Driver.Manage().Window.Maximize();
         Driver.Manage().Cookies.DeleteAllCookies();
-       // Driver!.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0);
     }
 }
