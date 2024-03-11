@@ -5,8 +5,7 @@ using SauceDemo_PageObject_Steps.Helpers.Configuration;
 namespace SauceDemo_PageObject_Steps.Tests
 {
     [AllureEpic("Bdd")]
-    [AllureEpic("Web Interface")]
-    [AllureFeature("Essential feature", "Integration feature")]
+    [AllureFeature("Integration feature")]
     public class SaucedemoLoginTests : BaseTest
     {
         [Test, Order(1)]

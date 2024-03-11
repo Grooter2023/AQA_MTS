@@ -13,8 +13,7 @@ namespace SauceDemo_PageObject_Steps.Tests
             AllureApi.SetDescription("Adding product to cart");
             AllureApi.AddFeature("AllureApi");
             AllureApi.AddFeature("Essential feature");
-            AllureApi.AddFeature("Integration feature");
-            AllureApi.AddStory("Story3");
+            AllureApi.AddStory("Story1");
             AllureApi.SetOwner("Anisimova Tany");
 
             NavigationSteps.Authorization(Configurator.AppSettings.Username, Configurator.AppSettings.Password);

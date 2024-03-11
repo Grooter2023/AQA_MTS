@@ -19,7 +19,7 @@ namespace SauceDemo_PageObject_Steps.Steps
             return new InventoryPage(Driver, true);
         }
 
-        [AllureStep]
+        [AllureStep("AddingProductCart")]
         public InventoryPage AddingProductCart()
         {
             AllureLifecycle.Instance.UpdateStep(stepResult =>
