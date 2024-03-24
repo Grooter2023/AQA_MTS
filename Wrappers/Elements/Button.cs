@@ -5,7 +5,7 @@ namespace Wrappers.Elements;
 public class Button
 {
     private UIElement _uiElement;
-    
+
     public Button(IWebDriver webDriver, By by)
     {
         _uiElement = new UIElement(webDriver, by);
