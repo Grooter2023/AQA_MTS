@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SauceDemo_PageObject_Steps", "SauceDemo\SauceDemo_PageObject_Steps.csproj", "{08086E75-8299-41DB-AFCA-6306C4CDC196}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wrappers", "Wrappers\Wrappers.csproj", "{29B779B1-CB32-4B5D-A2F3-4A3544C8886F}"
 EndProject
 Global
@@ -13,10 +11,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{08086E75-8299-41DB-AFCA-6306C4CDC196}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{08086E75-8299-41DB-AFCA-6306C4CDC196}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{08086E75-8299-41DB-AFCA-6306C4CDC196}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{08086E75-8299-41DB-AFCA-6306C4CDC196}.Release|Any CPU.Build.0 = Release|Any CPU
 		{29B779B1-CB32-4B5D-A2F3-4A3544C8886F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{29B779B1-CB32-4B5D-A2F3-4A3544C8886F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29B779B1-CB32-4B5D-A2F3-4A3544C8886F}.Release|Any CPU.ActiveCfg = Release|Any CPU

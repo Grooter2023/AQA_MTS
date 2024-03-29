@@ -1,4 +1,4 @@
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Drawing;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
@@ -158,4 +158,5 @@ public class UIElement : IWebElement
     public Point Location => _webElement.Location;
     public Size Size => _webElement.Size;
     public bool Displayed => _webElement.Displayed;
+    public IWebElement GetWebElement => _webElement;
 }

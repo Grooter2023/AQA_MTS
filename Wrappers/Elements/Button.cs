@@ -1,31 +1,37 @@
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Wrappers.Elements;
-
-public class Button
+namespace Wrappers.Elements
 {
-    private UIElement _uiElement;
-
-    public Button(IWebDriver webDriver, By by)
+    public class Button
     {
-        _uiElement = new UIElement(webDriver, by);
-    }
+        private UIElement _uiElement;
 
-    public Button(IWebDriver webDriver, IWebElement webElement)
-    {
-        _uiElement = new UIElement(webDriver, webElement);
-    }
+        public Button(IWebDriver webDriver, By by)
+        {
+            _uiElement = new UIElement(webDriver, by);
+        }
 
-    public void Click()
-    {
-        _uiElement.Click();
-    }
+        public Button(IWebDriver webDriver, IWebElement webElement)
+        {
+            _uiElement = new UIElement(webDriver, webElement);
+        }
 
-    public void Submit()
-    {
-        _uiElement.Submit();
-    }
+        public void Click()
+        {
+            _uiElement.Click();
+        }
 
-    public string Text => _uiElement.Text;
-    public bool Displayed => _uiElement.Displayed;
+        public void Submit()
+        {
+            _uiElement.Submit();
+        }
+
+        public string Text => _uiElement.Text;
+        public bool Displayed => _uiElement.Displayed;
+    }
 }
