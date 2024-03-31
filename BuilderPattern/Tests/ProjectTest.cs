@@ -18,5 +18,6 @@ public class ProjectTest : BaseTest
         
         Assert.That(_projectSteps.AddProject(expectedProject).SuccessMessage.Text.Trim(),
             Is.EqualTo("Successfully added the new project."));
+
     }
 }
