@@ -1,18 +1,16 @@
 ﻿using OpenQA.Selenium;
-using Wrappers.Pages.ProjectPages;
-using Wrappers.Pages.ProjectPages.AldrethScalePage;
+using Patterns.Pages.ProjectPages;
 
-namespace Wrappers.Steps
+namespace Patterns.Steps
 {
-    public class BaseStep
+    public class BaseStep(IWebDriver driver)
     {
-        protected IWebDriver Driver;
+        protected readonly IWebDriver Driver = driver;
 
-        public BaseStep(IWebDriver driver)
-        {
-            Driver = driver;
-        }
-        public DaysCalendarPage DaysCalendarPage => new(Driver);
-        public AldrethScalePage AldrethScalePage => new(Driver);
+        protected AldrethScalePage? AldrethScalePage { get; set; }
+        protected DaysCalendarPage? DaysCalendarPage { get; set; }
+        protected SCFPage? SCFPage { get; set; }
+        protected CalcPage? CalcPage { get; set; }
+        protected Page_2Page? Page_2Page { get; set; }
     }
 }

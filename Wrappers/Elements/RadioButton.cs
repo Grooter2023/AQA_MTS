@@ -1,8 +1,8 @@
 using OpenQA.Selenium;
-using Wrappers.Helpers;
-using Wrappers.Helpers.Configuration;
+using Patterns.Helpers;
+using Patterns.Helpers.Configuration;
 
-namespace Wrappers.Elements;
+namespace Patterns.Elements;
 
 public class RadioButton
 {

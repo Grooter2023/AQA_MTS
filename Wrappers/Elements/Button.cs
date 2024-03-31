@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Wrappers.Elements
+namespace Patterns.Elements
 {
     public class Button
     {

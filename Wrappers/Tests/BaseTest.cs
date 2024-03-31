@@ -1,12 +1,13 @@
 using Allure.Net.Commons;
 using NUnit.Allure.Core;
 using OpenQA.Selenium;
-using Wrappers.Core;
-using Wrappers.Helpers;
-using Wrappers.Helpers.Configuration;
+using Patterns.Core;
 using System.Text;
+using Patterns.Steps;
+using Patterns.Helpers;
+using Patterns.Helpers.Configuration;
 
-namespace Wrappers.Tests;
+namespace Patterns.Tests;
 
 [Parallelizable(scope: ParallelScope.All)]
 [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
@@ -15,6 +16,10 @@ public class BaseTest
 {
     protected IWebDriver Driver { get; private set; }
     protected WaitsHelper WaitsHelper { get; private set; }
+    protected SCFStep _sCFStep;
+    protected AldrethScaleStep _aldrethScaleStep;
+    protected DaysCalendarStep _daysCalendarStep;
+
 
     [OneTimeSetUp]
     public static void GlobalSetup()
@@ -23,10 +28,16 @@ public class BaseTest
     }
 
     [SetUp]
-    public void FactoryDriverTest()
+    public void Setup()
     {
         Driver = new Browser().Driver;
         WaitsHelper = new WaitsHelper(Driver, TimeSpan.FromSeconds(Configurator.WaitsTimeout));
+
+        _sCFStep = new SCFStep(Driver);
+        _aldrethScaleStep = new AldrethScaleStep(Driver);
+        _daysCalendarStep = new DaysCalendarStep(Driver);
+
+        Driver.Navigate().GoToUrl(Configurator.AppSettings.URL);
     }
 
     [TearDown]

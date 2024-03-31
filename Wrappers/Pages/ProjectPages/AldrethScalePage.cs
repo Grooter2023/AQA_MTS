@@ -1,27 +1,25 @@
 using OpenQA.Selenium;
-using Wrappers.Elements;
-using Wrappers.Pages;
+using Patterns.Elements;
+using Patterns.Pages;
+using System.Reflection.Metadata;
 
-namespace Wrappers.Pages.ProjectPages.AldrethScalePage
+namespace Patterns.Pages.ProjectPages
 {
-    public class AldrethScalePage : BasePage
+    public class AldrethScalePage(IWebDriver? driver, bool openByURL = false) : BasePage(driver, openByURL)
+
     {
-        private static string END_POINT = "https://bymed.top/calc/aldret-2228";
+        private const string END_POINT = "aldret-2228";
 
         private static readonly By ShowAnnouncementRadioBy = By.Name("val_1");
-        private static readonly By FrameBy = By.XPath("//*[@id='content']/div[2]/article/div/div[2]/div[1]/p[2]/iframe");
+        private static readonly By FrameBy = By.XPath("//iframe[@src]");
         private static readonly By GetSumBy = By.Id("sum");
-
-        public AldrethScalePage(IWebDriver driver) : base(driver, true)
-        {
-        }
 
         protected override string GetEndpoint()
         {
             return END_POINT;
         }
 
-        public override bool IsPageOpened()
+        protected override bool EvaluateLoadedStatus()
         {
             throw new NotImplementedException();
         }

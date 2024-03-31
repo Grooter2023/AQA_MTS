@@ -1,10 +1,10 @@
 using System.Collections.ObjectModel;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using Patterns.Elements;
 using SeleniumExtras.WaitHelpers;
-using Wrappers.Elements;
 
-namespace Wrappers.Helpers;
+namespace Patterns.Helpers;
 
 public class WaitsHelper(IWebDriver driver, TimeSpan timeout)
 {

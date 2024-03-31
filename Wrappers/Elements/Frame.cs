@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace Wrappers.Elements
+namespace Patterns.Elements
 {
     public class Frame
     {

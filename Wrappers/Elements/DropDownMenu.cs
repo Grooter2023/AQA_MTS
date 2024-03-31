@@ -1,10 +1,8 @@
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
-using UIElementsUnturned.UIElementsLib.Core.UI.Elements;
-using static System.Net.Mime.MediaTypeNames;
 
 
-namespace Wrappers.Elements;
+
+namespace Patterns.Elements;
 
 public class DropDownMenu
 {
@@ -14,7 +12,7 @@ public class DropDownMenu
     public DropDownMenu(IWebDriver driver, By by)
     {
         dropDown = new UIElement(driver, by);
-        
+
         dropDown.Click();
         dropDownList = dropDown.FindUIElements(By.XPath("descendant::option"));
     }
@@ -26,7 +24,7 @@ public class DropDownMenu
             foreach (var webElement in dropDownList)
             {
                 if (webElement.Text == text)
-                {  
+                {
                     webElement.Click();
                     break;
                 }

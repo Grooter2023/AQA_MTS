@@ -1,21 +1,21 @@
 ﻿using Allure.Net.Commons;
 using NUnit.Allure.Attributes;
 using OpenQA.Selenium;
-using Wrappers.Pages.ProjectPages;
+using Patterns.Pages.ProjectPages;
+using Patterns.Pages;
+using Patterns.Models;
 
-namespace Wrappers.Steps
+namespace Patterns.Steps
 {
-    public class SCFStep : BaseStep
+    public class SCFStep(IWebDriver driver) : BaseStep(driver)
     {
-        private SCFPage sCFPage;
-
-        public SCFStep(IWebDriver driver) : base(driver)
+        public SCFPage DropDownMenu(SCF sCF)
         {
-            sCFPage = new SCFPage(driver);
+            return SendKeys<SCFPage>(sCF);
         }
 
-        [AllureStep("Filling out the fields")]
-        public SCFPage SendKeys(string age, string сreatinine, string bodymass, string height)
+        [AllureStep("Navigating through pages and filling out fields")]
+        private T SendKeys<T>(SCF sCF) where T : BasePage
         {
             AllureLifecycle.Instance.UpdateStep(stepResult =>
             stepResult.parameters.Add(
@@ -26,19 +26,26 @@ namespace Wrappers.Steps
             }
             ));
 
-            sCFPage.AgeInput.SendKeys(age);
-            sCFPage.СreatinineInput.SendKeys(сreatinine);
-            sCFPage.BodymassInput.SendKeys(bodymass);
-            sCFPage.HeightInput.SendKeys(height);
-            sCFPage.SelectDropdown.SelectIndex(2);
-            sCFPage.SexDropdown.SelectIndex(1);
-            sCFPage.RaceDropdown.SelectIndex(1);
-            sCFPage.СalcButton.Click();
+            CalcPage = new CalcPage(Driver);
+            Page_2Page = new Page_2Page(Driver);
+            SCFPage = new SCFPage(Driver);
 
-            return sCFPage;
+            CalcPage.NextPageNumbers.Click();
+            Page_2Page.SKF.Click();
+
+            IWebElement frame = SCFPage.GetFrame.GetId();
+            Driver.SwitchTo().Frame(frame);
+
+            SCFPage.AgeInput.SendKeys(sCF.Age);
+            SCFPage.СreatinineInput.SendKeys(sCF.Creatinine);
+            SCFPage.BodymassInput.SendKeys(sCF.Bodymass);
+            SCFPage.HeightInput.SendKeys(sCF.Height);
+            SCFPage.SelectDropdown.SelectIndex(2);
+            SCFPage.SexDropdown.SelectIndex(1);
+            SCFPage.RaceDropdown.SelectIndex(1);
+            SCFPage.СalcButton.Click();
+
+            return (T)Activator.CreateInstance(typeof(T), Driver, false);
         }
-
-        public SCFPage GetPage() => sCFPage;
     }
-
 }

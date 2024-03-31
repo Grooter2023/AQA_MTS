@@ -1,13 +1,14 @@
 using Allure.Net.Commons;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
-using Wrappers.Elements;
+using Patterns.Elements;
+using Patterns.Pages;
 
-namespace Wrappers.Pages.ProjectPages;
+namespace Patterns.Pages.ProjectPages;
 
-public class SCFPage : BasePage
+public class SCFPage(IWebDriver? driver, bool openByURL = false) : BasePage(driver, openByURL)
+
 {
-    private static string END_POINT = "ñêô-2148";
+    private const string END_POINT = "ñêô-2148";
 
     private static readonly By AgeInputBy = By.Id("age");
     private static readonly By ÑreatinineInputBy = By.Id("cr");
@@ -23,16 +24,12 @@ public class SCFPage : BasePage
     private static readonly By ResultTextCKDBy = By.Id("ckd_epi_res");
     private static readonly By ResultTextFormulaBy = By.Id("cge_res");
 
-    public SCFPage(IWebDriver driver) : base(driver, true)
-    {
-    }
-
     protected override string GetEndpoint()
     {
         return END_POINT;
     }
 
-    public override bool IsPageOpened()
+    protected override bool EvaluateLoadedStatus()
     {
         throw new NotImplementedException();
     }

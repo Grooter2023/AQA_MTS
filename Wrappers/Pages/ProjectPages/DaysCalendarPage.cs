@@ -1,29 +1,27 @@
 using OpenQA.Selenium;
-using Wrappers.Elements;
+using Patterns.Elements;
+using Patterns.Pages;
 
-namespace Wrappers.Pages.ProjectPages;
+namespace Patterns.Pages.ProjectPages;
 
-public class DaysCalendarPage : BasePage
+public class DaysCalendarPage(IWebDriver? driver, bool openByURL = false) : BasePage(driver, openByURL)
 {
-    private static string END_POINT = "days-calendar-2473";
+    private const string END_POINT = "days-calendar-2473";
 
     private static readonly By ShowAnnouncementCheckboxBy = By.Id("last-day");
-    private static readonly By FrameBy = By.XPath("//*[@id='content']/div[2]/article/div/div[2]/div[1]/p/iframe");
+    private static readonly By FrameBy = By.XPath("//iframe[@src]");
     private static readonly By DayDiffBy = By.Id("day-diff");
-
-    public DaysCalendarPage(IWebDriver driver) : base(driver, true)
-    {
-    }
 
     protected override string GetEndpoint()
     {
         return END_POINT;
     }
 
-    public override bool IsPageOpened()
+    protected override bool EvaluateLoadedStatus()
     {
         throw new NotImplementedException();
     }
+
 
     public Checkbox ShowAnnouncementCheckbox => new Checkbox(Driver, ShowAnnouncementCheckboxBy);
     public Frame GetFrame => new Frame(Driver, FrameBy);

@@ -1,10 +1,11 @@
 ﻿using Allure.Net.Commons;
 using NUnit.Allure.Attributes;
 using OpenQA.Selenium;
-using Wrappers.Pages.ProjectPages;
-using Wrappers.Steps;
+using Patterns.Pages.ProjectPages;
+using Patterns.Models;
+using Patterns.Steps;
 
-namespace Wrappers.Tests;
+namespace Patterns.Tests;
 [AllureEpic("Bdd.Feature_V1")]
 [AllureFeature("SKF.Drop-down menu")]
 public class SCFTest : BaseTest
@@ -12,35 +13,27 @@ public class SCFTest : BaseTest
     [Test, Order(1)]
     [Description("Checking whether the drop down menu is complete")]
     [AllureStory("Story_01")]
-    [AllureSeverity((Allure.Net.Commons.SeverityLevel)SeverityLevel.critical)]
+    [AllureSeverity(SeverityLevel.critical)]
     [AllureOwner("Anisimova Tany")]
     [AllureLink("Website", "https://bymed.top/calc/скф-2148")]
     [AllureTms("TMS-001")]
     public void DropDownMenu()
     {
-        string age = "32";
-        string сreatinine = "123";
-        string bodymass = "80";
-        string height = "183";
+        SCFPage sCFPage = new SCFPage(Driver);
 
-        SCFStep sCFStep = new SCFStep(Driver);
-        SCFPage sCFPage = sCFStep.GetPage();
+        Assert.Multiple(() =>
+        {
+            _sCFStep.DropDownMenu(new SCF()
+            {
+                Age = "32",
+                Creatinine = "123",
+                Bodymass = "80",
+                Height = "183"
+            });
 
-        IWebElement frame = sCFPage.GetFrame.GetId();
-        Driver.SwitchTo().Frame(frame);
-
-        sCFStep.SendKeys(age, сreatinine, bodymass, height);
-        
-        Assert.Multiple(() => {
-
-            Assert.That(sCFPage.ResultTextMDRD.Text,
-            Is.EqualTo("0.3"));
-
-            Assert.That(sCFPage.ResultTextCKD.Text,
-            Is.EqualTo("0.26"));
-
-            Assert.That(sCFPage.ResultTextFormula.Text,
-            Is.EqualTo("0.83"));
+            Assert.That(sCFPage.ResultTextMDRD.Text, Is.EqualTo("0.3"));
+            Assert.That(sCFPage.ResultTextCKD.Text, Is.EqualTo("0.26"));
+            Assert.That(sCFPage.ResultTextFormula.Text, Is.EqualTo("0.83"));
         });
     }
 }
