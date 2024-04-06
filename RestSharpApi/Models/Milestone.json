@@ -1,0 +1,16 @@
+{
+    "id": 3,
+    "name": "Release 2.0",
+    "description": null,
+    "start_on": null,
+    "started_on": 1712421685,
+    "is_started": true,
+    "due_on": 1394596385,
+    "is_completed": false,
+    "completed_on": null,
+    "project_id": 2,
+    "parent_id": null,
+    "refs": null,
+    "url": "https://grooter.testrail.io/index.php?/milestones/view/3",
+    "milestones": []
+}

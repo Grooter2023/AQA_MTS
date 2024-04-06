@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+	<id>4</id>
+	<name>Project 100</name>
+	<announcement>Welcome to project 100</announcement>
+	<show_announcement>true</show_announcement>
+	<is_completed>false</is_completed>
+	<completed_on />
+	<suite_mode>3</suite_mode>
+	<default_role_id />
+	<case_statuses_enabled>false</case_statuses_enabled>
+	<url>https://grooter.testrail.io/index.php?/projects/overview/4</url>
+</root>
