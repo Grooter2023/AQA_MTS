@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Patterns", "Wrappers\Patterns.csproj", "{D245D5DE-5030-4F9C-9F37-CD1B28D96B04}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestRail_Example", "TestRail_Example\TestRail_Example.csproj", "{4D2DE048-73A5-4BE7-9E57-62D9D8757F15}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestSharpApi", "RestSharpApi\RestSharpApi.csproj", "{CF50CF4B-5AA8-4238-BB6F-52FD8D27FE2F}"
@@ -15,10 +13,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D245D5DE-5030-4F9C-9F37-CD1B28D96B04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D245D5DE-5030-4F9C-9F37-CD1B28D96B04}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D245D5DE-5030-4F9C-9F37-CD1B28D96B04}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D245D5DE-5030-4F9C-9F37-CD1B28D96B04}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4D2DE048-73A5-4BE7-9E57-62D9D8757F15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4D2DE048-73A5-4BE7-9E57-62D9D8757F15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D2DE048-73A5-4BE7-9E57-62D9D8757F15}.Release|Any CPU.ActiveCfg = Release|Any CPU
